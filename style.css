@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #111827, #0b1220);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: #fff;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 25px 0;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.form, .filter {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+}
+
+input, select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  color: white;
+}
+
+select option {
+  background: #1e293b;
+  color: white;
+}
+
+.transaction {
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.income { border-left: 5px solid #22c55e; }
+.expense { border-left: 5px solid #ef4444; }
+
+.delete {
+  background: #ef4444;
+  padding: 6px 10px;
+  border-radius: 8px;
+}

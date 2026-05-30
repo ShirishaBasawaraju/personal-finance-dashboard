@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Finance Tracker</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- PDF LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+<header>
+  <h2>💰 Finance Tracker</h2>
+  <div>
+    <button onclick="exportPDF()">Export PDF</button>
+    <button onclick="resetData()">Reset</button>
+  </div>
+</header>
+
+<div class="container" id="report">
+
+  <div class="cards">
+    <div class="card">
+      <h3>Balance</h3>
+      <p id="balance">0</p>
+    </div>
+    <div class="card">
+      <h3>Income</h3>
+      <p id="income">0</p>
+    </div>
+    <div class="card">
+      <h3>Expense</h3>
+      <p id="expense">0</p>
+    </div>
+  </div>
+
+  <div id="chartContainer"></div>
+
+  <div class="form">
+    <input type="text" id="desc" placeholder="Description" />
+    <input type="number" id="amount" placeholder="Amount" />
+
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+
+    <button onclick="addTransaction()">Add Transaction</button>
+  </div>
+
+  <div class="filter">
+    <input type="text" id="search" placeholder="Search..." onkeyup="render()" />
+    <select id="filterType" onchange="render()">
+      <option value="all">All</option>
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+  </div>
+
+  <div id="list"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
